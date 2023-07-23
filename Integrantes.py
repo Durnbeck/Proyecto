@@ -2,7 +2,7 @@
 Durnbeck Federico
 Sanso Wilfredo Pedro
 Giroldi Lucas
-Landriel Lautaro
+Landriel Lautar
 Lucas Abson
 Juan Nuñez Barua
 Lucas Barboza'''''
