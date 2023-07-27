@@ -1,5 +1,6 @@
 from django.db import models
 from apps.usuarios.models import Usuario
+from django.contrib.auth import get_user_model
 
 # Create your models here.
 class Categoria(models.Model):
@@ -17,8 +18,8 @@ class Noticia(models.Model):
     #para imagen debemos instalar pillow
     imagen = models.ImageField(upload_to= 'noticias')
     categoria_noticia = models.ForeignKey(Categoria, on_delete= models.CASCADE) #SET_NULL
-    author = models.ForeignKey(Usuario, on_delete=models.CASCADE, default=Usuario.objects.get(is_superuser=True).pk)
-
+    #author = models.ForeignKey(Usuario, on_delete=models.CASCADE, default=Usuario.objects.get(is_superuser=True).pk)
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, default=1)
     def __str__(self):
         return self.titulo
     

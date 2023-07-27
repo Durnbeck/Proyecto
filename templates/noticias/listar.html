@@ -4,25 +4,43 @@
 {% block titulo %}NOTICIAS{% endblock titulo %}
 
 {% block contenido %}
-    <h2>Aca estan mis noticias</h2>
-        <div class="submenu">
-            <a href="{% url 'noticias:listar' %}">TODAS</a>
+    <h2>Aquí están mis noticias</h2>
+    <div class="submenu">
+        <div class="dropdown">
+            <button class="dropdown-btn">Categorías</button>
+            <div class="dropdown-content">
+            <a href="{% url 'noticias:listar' %}">Todas las noticias</a>
             {% for cat in categorias %}
-                <a href="?id={{cat.pk}}">{{cat.nombre}}</a>
+            <a href="?categoria={{ cat.pk }}">{{ cat.nombre }}</a>
             {% endfor %}
+            </div>
         </div>
-        {% if noticias %}
-            {% for noti in noticias %}
-                <img src="{{noti.imagen.url}}" width="50">
-                <p><a href="{% url 'noticias:detalle' noti.pk %}">TITULO: {{noti.titulo}}</a></p>
-                <p>FECHA: {{noti.fecha_de_publicacion}}</p>
-                <p>CATEGORIA: {{noti.categoria_noticia}}</p>
-                <p>CONTENIDO: {{noti.contenido}}</p>
-            {% endfor %}
-        {% else %}
-            <h2>no hay notis</h2>
-        {% endif %}
-
-
+        <div class="dropdown">
+            <button class="dropdown-btn">Ordenar</button>
+            <div class="dropdown-content">
+            <a href="?antiguedad_asc=1">Más antiguas primero</a>
+            <a href="?antiguedad_desc=1">Más recientes primero</a>
+            <a href="?orden_asc=1">Orden alfabético ascendente</a>
+            <a href="?orden_desc=1">Orden alfabético descendente</a>
+            </div>
+        </div>
+        <a href="?antiguedad_asc=1">
+            <button class="arrow-btn">&#11014;</button>
+          </a>
+          <a href="?antiguedad_desc=1">
+            <button class="arrow-btn">&#11015;</button>
+          </a>
+    </div>
+    <br>
+    {% if noticias %}
+        {% for noti in noticias %}
+            <img src="{{ noti.imagen.url }}" width="50">
+            <p><a href="{% url 'noticias:detalle' noti.pk %}">TITULO: {{ noti.titulo }}</a></p>
+            <p>FECHA: {{ noti.fecha_de_publicacion }}</p>
+            <p>CATEGORIA: {{ noti.categoria_noticia }}</p>
+            <p>CONTENIDO: {{ noti.contenido }}</p>
+        {% endfor %}
+    {% else %}
+        <h2>No hay noticias</h2>
+    {% endif %}
 {% endblock contenido %}
-
