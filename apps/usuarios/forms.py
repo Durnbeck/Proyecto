@@ -11,14 +11,14 @@ class RegistroForm(UserCreationForm):
     password2 = forms.CharField(
         label='Confirmar Contraseña', widget=forms.PasswordInput, required=True)
 
-    # Agregar el campo de selección para el tipo de usuario
+    '''# Agregar el campo de selección para el tipo de usuario
     TIPOS_DE_USUARIO = [
         (Usuario.USUARIO_COLABORADOR, 'Colaborador'),
         (Usuario.USUARIO_VISITANTE, 'Visitante'),
         (Usuario.USUARIO_MIEMBRO, 'Miembro'),
         (Usuario.USUARIO_SUPER, 'Superusuario'),
     ]
-    tipo_usuario = forms.ChoiceField(choices=TIPOS_DE_USUARIO, initial=Usuario.USUARIO_MIEMBRO)
+    tipo_usuario = forms.ChoiceField(choices=TIPOS_DE_USUARIO, initial=Usuario.USUARIO_MIEMBRO)'''
 
     class Meta:
         model = Usuario
