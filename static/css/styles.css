@@ -10837,3 +10837,19 @@ textarea.form-control-lg {
   width: 4rem;
   font-size: 2rem;
 }
+
+
+.video-header {
+  position: relative;
+  overflow: hidden;
+}
+
+.fullscreen-video {
+  width: 200%;
+  height: 50vh; 
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}

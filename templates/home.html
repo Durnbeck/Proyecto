@@ -1,64 +1,24 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Yatchflix</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/png" href="{% static 'claqueta.ico' %}">
-        
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container px-5">
-                
-                <a class="navbar-brand" href="#!">Cinema in your home.</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'nosotros' %}">About us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Categories</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'noticias:listar' %}">News</a></li>
-                    </ul>
-                </div>
-            </div>
-            <style>
-                /* Definir estilos para el navbar */
-                nav {
-                background-image: url"{% static 'assets/listapeliculas.jpg' %}"; /* Reemplaza 'ruta-de-tu-imagen.jpg' con la ruta de tu imagen de fondo */
-                background-size: cover; /* Ajustar el tamaño de la imagen para cubrir el área del navbar */
-                height: 80px; /* Establecer la altura deseada para tu navbar */
-                /* Agrega otros estilos según tus necesidades */
-                }
-                
-                
-                /* Estilos para los enlaces dentro del navbar (opcional) */
-                nav a {
-                color: white; /* Cambiar el color del texto de los enlaces */
-                /* Agrega otros estilos para los enlaces según tus necesidades */
-                }
-                </style>
-                
-        </nav>
-        
+{%block contenido %}
+    <!-- <head> <link rel="stylesheet" type="text/css" href="{% static 'miapp/css/miarchivo.css' %}"></head> -->
         <!-- Header-->
-        <header class="bg-dark py-5">
+        
+        <header class="bg-dark py-5 video-header">
+            <video autoplay loop muted playsinline class="fullscreen-video">
+                
+                <source src="{% static 'network.mp4' %}" type="video/mp4">
+                <!-- Agrega otros formatos de video aquí para mejorar la compatibilidad -->
+            </video>
+            
+        
             <div class="container px-5">
+                <!-- Contenido sobre el video -->
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
                         <div class="text-center my-5">
                             <h1 class="display-5 fw-bolder text-white mb-2">Yatchflix</h1>
-                            <p class="lead text-white-50 mb-4">Welcome user, find the best movies, documentaries and series. We provide you with the most effective and easy way to watch whatever you want whenever you want at any time. </p>
+                            <p class="lead text-white-50 mb-4">Welcome user, find the best movies, documentaries and series. We provide you with the most effective and easy way to watch whatever you want whenever you want at any time.</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                                 <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'login' %}">Login</a>
                                 <a class="btn btn-outline-light btn-lg px-4" href="{% url 'registro' %}">Register</a>
@@ -73,29 +33,29 @@
             <div class="container px-5 my-5">
                 <div class="row gx-5">
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                        <h2 class="h4 fw-bolder">Easy</h2>
-                        <p>For our platform you only need to register and log in.</p>
-                        <a class="text-decoration-none" href="#!">
-                            Call to action
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"> <img width="200" height="250" src="{% static 'assets/ghost.jpg' %}" alt=""></div>
+                        <h2 class="h4 fw-bolder">Ghostbusters</h2>
+                        <p>Four unemployed paranormal investigators create a company in New York with the purpose of cleaning the city of ghosts.</p>
+                        <a class="text-decoration-none" href="https://www.youtube.com/watch?v=6hDkhw5Wkas&ab_channel=RottenTomatoesClassicTrailers">
+                            Watch the trailer 
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
-                        <h2 class="h4 fw-bolder">Quick</h2>
-                        <p>Watch any video or movie without downloading at all, just click and enjoy!</p>
-                        <a class="text-decoration-none" href="#!">
-                            Call to action
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><img width="200" height="250" src="{% static 'assets/future.jpg' %}" alt=""></div>
+                        <h2 class="h4 fw-bolder">Back to the future 2</h2>
+                        <p>A teenager and a quirky inventor travel back in time and into the future to alter a series of disastrous events.</p>
+                        <a class="text-decoration-none" href="https://www.youtube.com/watch?v=MdENmefJRpw&ab_channel=RottenTomatoesClassicTrailers">
+                            Watch the trailer 
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
                     <div class="col-lg-4">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                        <h2 class="h4 fw-bolder">Effective</h2>
-                        <p>With us you don't have to pay and whatever you want to see is totally free. No ads and no pauses.</p>
-                        <a class="text-decoration-none" href="#!">
-                            Call to action
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><img width="200" height="250" src="{% static 'assets/beet.jpg' %}" alt="">></div>
+                        <h2 class="h4 fw-bolder">Beetlejuice</h2>
+                        <p>A couple who have just died hire a vulgar ghost to scare the new occupants of their house.</p>
+                        <a class="text-decoration-none" href="https://www.youtube.com/watch?v=ickbVzajrk0&ab_channel=RottenTomatoesClassicTrailers">
+                            Watch the trailer 
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -119,8 +79,8 @@
                                 <div class="d-flex">
                                     <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
                                     <div class="ms-4">
-                                        <p class="mb-1">Thank you for putting together such a great product. We loved working with you and the whole team, and we will be recommending you to others!</p>
-                                        <div class="small text-muted">- Client Name, Location</div>
+                                        <p class="mb-1">Best digital web application to see what you want, I have never seen anything like this before. Very fast and effective!</p>
+                                        <div class="small text-muted">- Marcus Thorne, Wellington-New Zealand</div>
                                     </div>
                                 </div>
                             </div>
@@ -131,8 +91,8 @@
                                 <div class="d-flex">
                                     <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
                                     <div class="ms-4">
-                                        <p class="mb-1">The whole team was a huge help with putting things together for our company and brand. We will be hiring them again in the near future for additional work!</p>
-                                        <div class="small text-muted">- Client Name, Location</div>
+                                        <p class="mb-1">Amazing! I have no words to describe how wonderful this application is. Highly recommended!</p>
+                                        <div class="small text-muted">- Ava Winters, London-England</div>
                                     </div>
                                 </div>
                             </div>
@@ -142,19 +102,5 @@
             </div>
         </section>
         <!-- Contact section-->
-      
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="{% static 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js' %}"></script>
-        <!-- Core theme JS-->
-        <script src="{% static 'js/scripts.js' %}"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="{% static 'https://cdn.startbootstrap.com/sb-forms-latest.js'  %}"></script>
-    </body>
-</html>
+{% endblock contenido %}
+        

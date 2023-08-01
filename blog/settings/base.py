@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+from django.urls import reverse_lazy
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -117,3 +117,7 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = reverse_lazy("login")
+LOGOUT_REDIRECT_URL = reverse_lazy("login")
+LOGIN_REDIRECT_URL = reverse_lazy("inicio")

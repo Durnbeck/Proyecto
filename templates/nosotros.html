@@ -5,5 +5,59 @@
 {% block titulo %}NOSOTROS{% endblock titulo %}
 
 {% block contenido %}
-    <h2>Sobre mi!</h2>
+<header>
+    <link rel="stylesheet" href="{% static 'css/video.css' %}">
+    <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+    <div class="overlay"></div>
+  
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOSOTROS</title>
+</head>
+
+<body>
+
+  <iframe width="3000" height="2000" src="https://www.youtube.com/embed/JQerdtHqTXQ?modestbranding=0&controls=0&mute=1&autoplay=1"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+</body>
+    <!-- The HTML5 video element that will create the background video on the header -->
+    <!--<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="https://source.unsplash.com/XT5OInaElMw/1600x900" type="image.png">
+    </video>-->
+  
+    <!-- The header content -->
+    <div class="container h-100">
+      <div class="d-flex h-100 text-center align-items-center">
+        <div class="w-100 text-white">
+          <h1 class="display-3"></h1>
+          <p class="lead mb-0"></p>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Page section example for content below the video header -->
+  <section class="my-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+
+          <h1>About us</h1>
+          <h5>Who are we?</h5>
+          <p>We are a digital platform that tries to offer the best service and try to reach as many people as possible.</p>
+          <h5>Our content:</h5>
+          <p>Our content is based on retro type movies whether comedy, science fiction, drama, trhiller, horror and many other genres.</p>
+          <h5>Our community:</h5>
+          <p>In our community we try to make all movie lovers feel identified with at least one of the movies that we have to offer. We also want to provide support and the best service to make you feel comfortable at all times.</p>
+          <p class="mb-0">
+            For more information let us know your opinion.<a href="{% url 'contacto' %}"></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 {% endblock contenido %}

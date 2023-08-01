@@ -28,6 +28,7 @@ urlpatterns = [
     #3 parametro: nombre de la url
     path("", views.Home, name="home"),
     path("nosotros/", views.Nosotros, name="nosotros"),
+    path("contacto/", views.Contacto, name="contacto"),
 
     #urls aplicaciones
     path('noticias/', include('apps.noticias.urls')),
