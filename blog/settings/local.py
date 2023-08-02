@@ -4,7 +4,7 @@ from .base import *
 DEBUG = False 
 
 if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     
 ALLOWED_HOSTS = ['FedericoD.pythonanywhere.com']
 
