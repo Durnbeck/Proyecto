@@ -1,9 +1,12 @@
 from .base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False 
 
-ALLOWED_HOSTS = []
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    
+ALLOWED_HOSTS = ['FedericoD.pythonanywhere.com']
 
 
 
@@ -13,10 +16,10 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog_info',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'NAME': 'FedericoD$default',
+        'USER': 'FedericoD',
+        'PASSWORD': 'rootroot',
+        'HOST': 'FedericoD.mysql.pythonanywhere-services.com',
         'PORT': '',
     }
 }
