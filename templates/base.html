@@ -26,12 +26,12 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         {% if user.is_authenticated %}
             <strong style="color: white;">Welcome {{ user.username }}!</strong>
-            <a href="{% url 'logout' %}">LOGOUT</a>
+            
         {% else %}
-            <a href="{% url 'login' %}">LOGIN</a>
-            <a href="{% url 'registro' %}">REGISTRO</a>
+            <a href="{% url 'login' %}"></a>
+            <a href="{% url 'registro' %}"></a>
         {% endif %}
-                        
+                        <li class="nav-item"><a class="nav-link active" aria-current="page"  href="{% url 'logout' %}">LOGOUT</a> </li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'nosotros' %}">About us</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}">Contacto</a></li>
