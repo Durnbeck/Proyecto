@@ -8,12 +8,12 @@
         <meta name="author" content="" />
         <title>Yatchflix</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/png" href="{% static 'claqueta.ico' %}">
-        
+        <link rel="icon" type="image/ico" href="{% static 'claqueta.ico' %}">
+
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />    
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     </head>
 
     <body>
@@ -24,14 +24,16 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        {% if user.is_authenticated %}
-            <strong style="color: white;">Welcome {{ user.username }}!</strong>
-            
-        {% else %}
-            <a href="{% url 'login' %}"></a>
-            <a href="{% url 'registro' %}"></a>
-        {% endif %}
-                        <li class="nav-item"><a class="nav-link active" aria-current="page"  href="{% url 'logout' %}">LOGOUT</a> </li>
+             {% if user.is_authenticated %}
+                <strong style="color: white;">Welcome  {{ user.username }}!</strong>
+                <li class="nav-item"><a class="nav-link active" aria-current="page"  href="{% url 'logout' %}">LOGOUT</a> </li>
+                {% else %}
+                <li class="nav-item"><a class="nav-link active" aria-current="page"  href="{% url 'login' %}">LOGIN</a> </li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page"  href="{% url 'registro' %}">REGISTRO</a> </li>
+                    <a href="{% url 'login' %}"></a>
+                    <a href="{% url 'registro' %}"></a>
+                {% endif %}
+
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'nosotros' %}">About us</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}">Contacto</a></li>
@@ -39,7 +41,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <style>
                 /* Definir estilos para el navbar */
                 nav {
@@ -48,15 +50,15 @@
                 height: 80px; /* Establecer la altura deseada para tu navbar */
                 /* Agrega otros estilos según tus necesidades */
                 }
-                
-                
+
+
                 /* Estilos para los enlaces dentro del navbar (opcional) */
                 nav a {
                 color: white; /* Cambiar el color del texto de los enlaces */
                 /* Agrega otros estilos para los enlaces según tus necesidades */
                 }
                 </style>
-                
+
         </nav>
         {% block contenido %}
         {% endblock contenido %}
