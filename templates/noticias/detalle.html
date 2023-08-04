@@ -2,7 +2,10 @@
 {% load static %}
 
 {% block contenido %}
-    <h2>Mi noticia detallada</h2>
+    <div class="text-center my-5">
+    <h2>MOVIE SYNOPSIS</h2>
+    <div>            <br>                  </div>
+    <div>
     {% if user.is_authenticated and noticia.author == user or user.is_staff or user.is_superuser %}
         <a href="{% url 'noticias:edit_noticia' pk=noticia.pk %}">Editar</a>
 
@@ -12,11 +15,11 @@
         </form>
     {% endif %}
     <img src="{{ noticia.imagen.url }}" width="50%">
-    <p>TITULO: {{ noticia.titulo }}</p>
-    <p>FECHA: {{ noticia.fecha_de_publicacion }}</p>
-    <p>AUTOR: {{ noticia.author }}</p>
-    <p>CATEGORIA: {{ noticia.categoria_noticia }}</p>
-    <p>CUERPO: {{ noticia.contenido }}</p>
+    <strong><p>TITULO:</strong> {{ noticia.titulo }}</p>
+    <strong><p>FECHA:</strong> {{ noticia.fecha_de_publicacion }}</p>
+    <strong><p>AUTOR:</strong> {{ noticia.author }}</p>
+    <strong><p>CATEGORIA:</strong> {{ noticia.categoria_noticia }}</p>
+    <strong><p>CUERPO:</strong> {{ noticia.contenido }}</p>
     <br>
 
     <h3>Comentarios</h3>

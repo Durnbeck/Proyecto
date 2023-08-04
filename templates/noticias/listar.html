@@ -4,7 +4,11 @@
 {% block titulo %}NOTICIAS{% endblock titulo %}
 
 {% block contenido %}
-    <h2>Aquí están mis noticias</h2>
+    <div class="row gx-5 justify-content-center">
+            <div class="col-lg-12">
+            <div class="text-center my-50">
+            <h1 class="display-5 fw-bolder text-black mb-2">NEWS</h1>
+    <div>
     <div class="submenu">
         <div class="dropdown">
             <button class="dropdown-btn">Categorías</button>
@@ -34,14 +38,14 @@
     <br>
     {% if noticias %}
         {% for noti in noticias %}
-            <img src="{{ noti.imagen.url }}" width="50">
-            <p><a href="{% url 'noticias:detalle' noti.pk %}">TITULO: {{ noti.titulo }}</a></p>
-            <p>FECHA: {{ noti.fecha_de_publicacion }}</p>
-            <p>CATEGORIA: {{ noti.categoria_noticia }}</p>
-            <p>CONTENIDO: {{ noti.contenido }}</p>
+            <img src="{{ noti.imagen.url }}" width="150">
+            <p><a href="{% url 'noticias:detalle' noti.pk %}"><strong>ADD COMMENT:</strong> {{ noti.titulo }}</a></p>
+           <strong> <p>FECHA:</strong> {{ noti.fecha_de_publicacion }}</p>
+           <strong><p>CATEGORIA:</strong> {{ noti.categoria_noticia }}</p>
+            <strong><p>CONTENIDO:</strong> {{ noti.contenido }}</p>
         {% endfor %}
     {% else %}
         <h2>No hay noticias</h2>
     {% endif %}
-    
+
 {% endblock contenido %}
